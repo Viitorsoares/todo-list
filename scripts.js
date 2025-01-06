@@ -1,27 +1,29 @@
 const input = document.querySelector('.input')
 const listTask = document.querySelector('.list-task')
 
-let listaItens = []
+let itemsList = []
 
 const button = document.querySelector('.btn').addEventListener('click', () => {
-    listaItens.push(input.value)
+    itemsList.push(input.value)
 
-    campoDeTarefas()
+    input.value = ''
+
+    taskFields()
 })
 
-function campoDeTarefas() {
+function taskFields() {
 
-        let novaLi = ''
+    let newList = ''
 
-        campoDeTarefas.forEach(tarefa => {
-            
-            novaLi = novaLi + `
+    itemsList.forEach((tasks, index) => {
+        newList = newList + `
             <li class="task">
                 <img src="img/check.png" alt="check-na-tarefa">
-                <p>${tarefa}</p>
-                <img src="img/excluir.png" alt="excluir-tarefa">
+                <p>${tasks}</p>
+                <img src="img/excluir.png" alt="excluir-tarefa" class="delete-items">
             </li>
             `
+    });
 
-        });
+    listTask.innerHTML = newList
 }
