@@ -67,6 +67,7 @@ body {
     padding: 0 15px;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 20px
 }
 
 img {
@@ -77,4 +78,9 @@ img {
 
 .task:hover img {
     opacity: 1;
+}
+
+.done {
+    background-color: #1369CE;
+    text-decoration: line-through;
 }
